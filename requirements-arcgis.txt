@@ -1,0 +1,3 @@
+# Only needed for arcgis_online/publish_to_arcgis.py (it is a big package)
+-r requirements.txt
+arcgis>=2.3
