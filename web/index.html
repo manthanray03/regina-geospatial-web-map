@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regina Park Amenities Map</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Regina Park Amenities</h1>
+    <p>City of Regina open data, served from PostGIS through a FastAPI service.</p>
+  </header>
+
+  <main>
+    <aside id="sidebar">
+      <label for="type-filter">Amenity type</label>
+      <select id="type-filter">
+        <option value="">All amenities</option>
+      </select>
+
+      <label for="radius">Search distance</label>
+      <select id="radius">
+        <option value="250">250 m</option>
+        <option value="500" selected>500 m</option>
+        <option value="1000">1 km</option>
+        <option value="2000">2 km</option>
+      </select>
+
+      <p class="hint">Click anywhere on the map to see what is close to that spot.</p>
+
+      <button id="nearest-btn" type="button">Find 5 closest to the map centre</button>
+
+      <p id="status">Loading...</p>
+      <ol id="results"></ol>
+    </aside>
+
+    <div id="map"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
