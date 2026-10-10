@@ -1,0 +1,18 @@
+# PostgreSQL 16 with PostGIS, so you don't have to install it by hand.
+# Start:  docker compose up -d
+# Stop:   docker compose down
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: regina_postgis
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-regina_gis}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
