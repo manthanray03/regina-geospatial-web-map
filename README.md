@@ -4,6 +4,8 @@ A small geospatial web app that shows City of Regina park amenities (playgrounds
 
 I built it to learn the full path of GIS data: from a raw shapefile, into a spatial database, through a REST API, and onto a web map.
 
+![Map screenshot](docs/screenshot.png)
+
 ## What it does
 
 - Downloads the Park Amenities shapefile from the City of Regina open data portal
